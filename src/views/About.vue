@@ -733,7 +733,7 @@ export default class Vip extends Vue {
     myform.append("recommUid",(this as any).$route.query.uid ? (this as any).$route.query.uid : '');
     axios({
       method: "post",
-      url: "/activity/babao_dan/save",
+      url: "http://bbd.manlongdyf.com/activity/babao_dan/save",
       data: myform,
       // {
       //   name: this.ruleForm.pass,
