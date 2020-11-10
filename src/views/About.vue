@@ -31,7 +31,7 @@
           ></el-input>
         </el-form-item>
         <el-form-item label="社会背景" prop="age">
-          <el-input v-model.number="ruleForm.age"></el-input>
+          <el-input v-model.number="ruleForm.age" placeholder="xx公司总经理/xx学院教授/xx部处长"></el-input>
         </el-form-item>
 
         <el-form-item label="省份城市" prop="adder">
