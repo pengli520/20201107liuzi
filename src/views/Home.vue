@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-09 17:53:47
+ * @LastEditTime: 2020-11-10 10:01:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \20201107liuzi\src\views\Home.vue
+-->
 <template>
   <div class="home">
     <!-- <img src="../assets/1.jpg" alt=""> -->
@@ -5,7 +13,7 @@
       >申请成为vip</el-button
     >
     <div class="home-flex">
-      <div class="gr" v-for="(item, index) in list" :key="index">
+      <div class="gr" v-for="(item, index) in list" :key="index" @click="nextWin(item.path)">
         <p>{{ item.text }}</p>
         <img v-if="item.img" :src="item.img" alt="" />
       </div>
@@ -20,7 +28,12 @@ export default class Home extends Vue {
   list = [
     {
       text: '购买',
-      img: require('@/assets/4.jpg')
+      img: require('@/assets/4.jpg'),
+      path: 'https://shop44664174.m.youzan.com/wscgoods/detail/2omqbqf2bm6d2?alias=2omqbqf2bm6d2&reft=1604973161071&spm=f.86157138&sf=wx_sm&form=kdt',
+    },
+    {
+      text: '',
+      img: ''
     },
     {
       text: '',
@@ -28,15 +41,16 @@ export default class Home extends Vue {
     },
     {
       text: '个人中心',
-      img: require('@/assets/3.png')
-    },
-    {
-      text: '',
-      img: ''
+      img: require('@/assets/3.png'),
+      path: 'https://shop44664174.youzan.com/wscuser/membercenter?alias=6Mq8xyUsWH&reft=1604973374351&spm=f.86157138&sf=wx_sm&form=kdt&kdt_id=44472006'
     },
   ]
   nextpage() {
     this.$router.push({ name: "vip" , query: {uid: (this as any).$route.query.uid}});
+  }
+
+  nextWin(path: string) {
+    window.open(path)
   }
 }
 </script>
@@ -67,13 +81,14 @@ export default class Home extends Vue {
   left: calc(50% - 58px);
 }
 .home-flex{
- position: fixed;
+  width: 100%;
+  position: fixed;
   bottom: 0px;
   display: flex;
 }
 .gr {
  
-  width: 80px;
+  width: 25%;
   height: 100px;
   background: rgba(0, 0, 0, 0.5);
   font-size: 12px;
@@ -87,6 +102,7 @@ export default class Home extends Vue {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     line-height: 30px;
     height: 30px;
+    color: #fff;
   }
   img {
     width: 20px;

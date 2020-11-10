@@ -831,6 +831,7 @@ export default class Vip extends Vue {
 }
 .el-input__inner {
   width: 250px;
+  color: #999;
 }
 .list {
   display: flex;
