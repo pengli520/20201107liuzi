@@ -725,7 +725,7 @@ export default class Vip extends Vue {
   updata() {
     this.loadingInstance = Loading.service({});
     const myform = new FormData();
-    myform.append("name",this.ruleForm.pass);
+    // myform.append("name",this.ruleForm.pass);
     myform.append("mobile",this.ruleForm.checkPass);
     myform.append("shbj",this.ruleForm.age);
     myform.append("province",this.ruleForm.adder.province);
@@ -752,9 +752,9 @@ export default class Vip extends Vue {
       }  else {
         Toast({
           message: res.data.msg || '请求失败',
+          duration: 5000
         })
       }
-      this.loadingInstance.close();
       this.status = false;
       console.log(res);
         this.ruleForm = {
@@ -775,11 +775,11 @@ export default class Vip extends Vue {
     })
   }
 
-  // created(){
-  //   Toast({
-  //     message: '操作成功',
-  //   });
-  // }
+  created(){
+    Toast({
+      message: '操作成功',
+    });
+  }
 }
 </script>
 
